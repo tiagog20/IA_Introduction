@@ -9,10 +9,8 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.agents import initialize_agent, AgentType, Tool
 from langchain_community.utilities import WikipediaAPIWrapper
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+
 
 # Set Streamlit page configuration
 st.set_page_config(
@@ -173,3 +171,4 @@ if "llm_no_rag" in st.session_state and st.session_state.llm_no_rag and "llm_rag
         st.subheader("Respuesta con RAG (fuente externa)")
         st.info(st.session_state.llm_rag)
         st.write("Esta respuesta utiliza la **Generación Aumentada por Recuperación (RAG)** para buscar información relevante en fuentes externas (como Wikipedia) antes de generar la respuesta. Esto puede ayudar a proporcionar información más actualizada y precisa.")
+
